@@ -1,0 +1,23 @@
+<!--pages/home/home.wxml-->
+<view class='container'>
+  <!-- 轮播 -->
+  <swiper class='lunbo' indicator-dots="true" indicator-active-color="#eee" autoplay='true' circular='true'>
+    <swiper-item wx:for="{{list}}" wx:key="index">
+      <image src='{{item.img_url}}'></image>
+    </swiper-item>
+  </swiper>
+  <!-- 九宫格 -->
+  <view class='grid'>
+    <view class='nav-item' wx:for="{{gridlist}}" wx:key='item.family_id' bindtap='jump'  data-bb='{{item.family_id}}'>
+      <image src='{{item.img_url}}' lazy-load='true' mode="aspectFill"></image>
+      <text>{{item.title}}</text>
+    </view> 
+  </view>
+</view>
+<!-- 视频专区 -->
+<view>
+  <view wx:for='{{videolist}}' wx:key='index'>
+  <h4>{{item.title}}</h4>
+    <video src='{{item.url}}' controls class='video' lazy-load></video>
+  </view>
+</view>

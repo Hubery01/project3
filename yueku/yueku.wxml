@@ -1,0 +1,23 @@
+<!--pages/yueku/yueku.wxml-->
+<scroll-view scroll-y="true" class="container">
+	<view wx:for="{{list}}"  wx:key='index'>
+		<view class="block" bindtap="playTap" data-id="{{song.id}}">
+			<view class="left">
+				<image src="{{item.pic_url}}" mode="aspectFill"/>
+			</view>
+			<view class="right">
+				<view class="content">
+					<view>
+						<text class="song-name">{{item.name}}</text>	
+					</view>
+					<view>
+						<text class="song-artists">{{item.singer}}</text>
+					</view>
+				</view>
+				<view class="play">
+					<image src="../../tabs/more.png" mode="scaleToFill"/>
+				</view>
+			</view>
+		</view>	
+	</view>
+</scroll-view>
